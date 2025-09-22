@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Albanian Constitution Theme - Light Mode */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 5%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
+
+    /* Albanian Red as Primary - Exact Flag Colors */
+    --primary: 0 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 0 100% 60%;
+
+    /* Black as Secondary - Exact Flag Colors */
+    --secondary: 0 0% 0%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted tones */
+    --muted: 0 15% 96%;
+    --muted-foreground: 0 5% 45%;
+
+    /* Gold accents */
+    --accent: 45 90% 60%;
+    --accent-foreground: 0 0% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 15% 90%;
+    --input: 0 15% 94%;
+    --ring: 0 82% 56%;
+
+    --radius: 0.75rem;
+
+    /* Albanian Patriotic Gradients */
+    --gradient-patriotic: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    --gradient-eagle: linear-gradient(145deg, hsl(var(--secondary)), hsl(0 0% 15%));
+
+    /* Albanian Shadows */
+    --shadow-patriotic: 0 10px 30px -5px hsl(var(--primary) / 0.3);
+    --shadow-elegant: 0 4px 20px -2px hsl(var(--secondary) / 0.15);
+    
+    /* Constitutional Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Albanian Constitution Theme - Dark Mode */
+    --background: 0 0% 6%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Albanian Red Primary - Exact Flag Colors */
+    --primary: 0 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 0 100% 60%;
+
+    /* Black as Secondary - Exact Flag Colors */
+    --secondary: 0 0% 0%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 5% 12%;
+    --muted-foreground: 0 5% 65%;
+
+    /* Gold accents for dark mode */
+    --accent: 45 85% 55%;
+    --accent-foreground: 0 0% 8%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 0 5% 18%;
+    --input: 0 5% 15%;
+    --ring: 0 75% 50%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-background via-background to-muted text-foreground font-medium;
+  }
+}
+
+@layer components {
+  /* Albanian Eagle Animation */
+  .eagle-pulse {
+    @apply animate-pulse;
+    animation-duration: 3s;
+  }
+
+  /* Constitutional Message Styles */
+  .message-user {
+    @apply bg-gradient-to-r from-primary to-primary-glow text-primary-foreground shadow-lg;
+  }
+
+  .message-bot {
+    @apply bg-card border border-border shadow-elegant;
+  }
+
+  /* Patriotic Hover Effects */
+  .hover-patriotic {
+    @apply transition-all duration-300 hover:shadow-patriotic hover:scale-[1.02];
+  }
+
+  /* Constitutional Input */
+  .input-constitutional {
+    @apply bg-card/50 backdrop-blur-sm border-primary/20 focus:border-primary transition-all duration-300;
+  }
+}
