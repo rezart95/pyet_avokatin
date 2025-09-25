@@ -1,6 +1,7 @@
-def main():
-    print("Hello from pyet-avokatin!")
+from fastapi import FastAPI
+from routers import ingest, query
 
+app = FastAPI(title="Legal RAG API")
 
-if __name__ == "__main__":
-    main()
+app.include_router(ingest.router, prefix="/api")
+app.include_router(query.router, prefix="/api")
