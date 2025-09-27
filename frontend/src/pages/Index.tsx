@@ -130,13 +130,13 @@ const Index = () => {
   };
 
   return (
-    <SidebarProvider>
-      <div className="min-h-screen flex w-full">
+    <SidebarProvider defaultOpen={true}>
+      <div className="min-h-screen flex w-full bg-background">
         <AppSidebar 
           activeSection={activeSection} 
           onSectionChange={setActiveSection} 
         />
-        <SidebarInset>
+        <SidebarInset className="flex-1 overflow-hidden">
           {renderContent()}
         </SidebarInset>
       </div>
