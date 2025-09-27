@@ -74,7 +74,7 @@ export function AppSidebar({ activeSection, onSectionChange }: AppSidebarProps) 
                   <SidebarMenuButton
                     onClick={() => onSectionChange(item.id)}
                     isActive={activeSection === item.id}
-                    className="group w-full min-h-[3rem] md:min-h-[3.5rem] p-2 md:p-3 hover:bg-primary/10 hover:text-primary data-[active=true]:bg-primary data-[active=true]:text-primary-foreground rounded-lg transition-all duration-200 text-left"
+                    className="group/item w-full min-h-[3rem] md:min-h-[3.5rem] p-2 md:p-3 hover:bg-primary/10 hover:text-primary data-[active=true]:bg-primary data-[active=true]:text-primary-foreground rounded-lg transition-all duration-200 text-left"
                     size="lg"
                   >
                     <item.icon className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0 mt-0.5" />
@@ -82,7 +82,7 @@ export function AppSidebar({ activeSection, onSectionChange }: AppSidebarProps) 
                       <span className="font-medium text-xs md:text-sm leading-tight text-left w-full">
                         {item.title}
                       </span>
-                      <span className="text-[10px] md:text-xs text-muted-foreground group-hover:text-primary/70 group-data-[active=true]:text-primary-foreground/70 leading-tight text-left w-full overflow-hidden text-ellipsis">
+                      <span className="text-[10px] md:text-xs text-muted-foreground group-hover/item:text-primary/70 group-data-[active=true]/item:text-primary-foreground/70 leading-tight text-left w-full overflow-hidden text-ellipsis">
                         {item.description}
                       </span>
                     </div>
